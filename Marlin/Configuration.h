@@ -1062,10 +1062,6 @@
 
 //#define UNKNOWN_Z_NO_RAISE // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-//TODO(Scott): reduce this once pillar height is reduced
-#define Z_HOMING_HEIGHT 10   // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
-                             // Be sure you have this distance over your Z_MAX_POS in case.
-
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
 #define X_HOME_DIR 1
@@ -1085,6 +1081,10 @@
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 15
+
+// Minimal Z height (mm) before homing (G28) for Z clearance above the bed, clamps, ...
+// Be sure you have this distance over your Z_MAX_POS in case.
+#define Z_HOMING_HEIGHT Z_MAX_POS
 
 /**
  * Software Endstops
