@@ -1072,7 +1072,11 @@
 
 // The size of the print bed
 #define X_BED_SIZE 110
-#define Y_BED_SIZE 310
+#define Y_BED_SIZE 190
+
+// Expected wafer center
+#define X_WAFER_CENTER 55
+#define Y_WAFER_CENTER 130
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0

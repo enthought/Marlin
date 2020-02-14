@@ -1484,12 +1484,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X (X_BED_SIZE/2)
-  #define PROBE_PT_1_Y (250-int(33*1.414))
-  #define PROBE_PT_2_X (X_BED_SIZE/2+33)
-  #define PROBE_PT_2_Y (250+33)
-  #define PROBE_PT_3_X (X_BED_SIZE/2-33)
-  #define PROBE_PT_3_Y (250+33)
+  #define PROBE_PT_1_X X_WAFER_CENTER
+  #define PROBE_PT_1_Y (Y_WAFER_CENTER-int(33*1.414))
+  #define PROBE_PT_2_X (X_WAFER_CENTER+33)
+  #define PROBE_PT_2_Y (Y_WAFER_CENTER+33)
+  #define PROBE_PT_3_X (X_WAFER_CENTER-33)
+  #define PROBE_PT_3_Y (Y_WAFER_CENTER+33)
 #endif  //TODO(Scott)
 
 /**
