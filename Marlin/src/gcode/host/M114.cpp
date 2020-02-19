@@ -190,5 +190,19 @@ void GcodeSuite::M114() {
   #endif
 
   planner.synchronize();
-  report_current_position();
+
+  if (parser.seen('P')) {
+    xyz_pos_t pos = current_position.asLogical();
+    uint16_t precision = parser.value_ushort();
+    char str[12];
+    for (uint8_t a = X_AXIS; a <= Z_AXIS; a++) {
+      SERIAL_CHAR(axis_codes[a], ':');
+      SERIAL_ECHO(dtostrf(pos[a], 1, precision, str));
+      SERIAL_CHAR(' ');
+    }
+    SERIAL_EOL();
+  } else {
+    report_current_position();
+  }
+
 }
