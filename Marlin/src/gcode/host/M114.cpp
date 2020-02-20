@@ -198,7 +198,9 @@ void GcodeSuite::M114() {
     for (uint8_t a = X_AXIS; a <= Z_AXIS; a++) {
       SERIAL_CHAR(axis_codes[a], ':');
       SERIAL_ECHO(dtostrf(pos[a], 1, precision, str));
-      SERIAL_CHAR(' ');
+      if (a < Z_AXIS) {
+        SERIAL_CHAR(' ');
+      }
     }
     SERIAL_EOL();
   } else {
