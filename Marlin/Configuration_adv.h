@@ -1484,12 +1484,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X X_NOMINAL_CENTER
-  #define PROBE_PT_1_Y (Y_NOMINAL_CENTER+int(33*1.414))
-  #define PROBE_PT_2_X (X_NOMINAL_CENTER-33)
-  #define PROBE_PT_2_Y (Y_NOMINAL_CENTER-33)
-  #define PROBE_PT_3_X (X_NOMINAL_CENTER+33)
-  #define PROBE_PT_3_Y (Y_NOMINAL_CENTER-33)
+  #define PROBE_PT_1_X 55
+  #define PROBE_PT_1_Y 185
+  #define PROBE_PT_2_X 42
+  #define PROBE_PT_2_Y 73
+  #define PROBE_PT_3_X 117
+  #define PROBE_PT_3_Y 128
 #endif  //TODO(Scott)
 
 /**
