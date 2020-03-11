@@ -370,8 +370,10 @@ void homeaxis(const AxisEnum axis);
      */
     inline bool position_is_reachable_by_probe(const float &rx, const float &ry) {
       return position_is_reachable(rx - probe_offset_xy.x, ry - probe_offset_xy.y)
-          && WITHIN(rx, probe_min_x() - slop, probe_max_x() + slop)
-          && WITHIN(ry, probe_min_y() - slop, probe_max_y() + slop);
+          // && WITHIN(rx, probe_min_x() - slop, probe_max_x() + slop)
+          // && WITHIN(ry, probe_min_y() - slop, probe_max_y() + slop)
+          //TODO: fix this more generally.
+          ;
     }
 
   #endif // HAS_BED_PROBE
